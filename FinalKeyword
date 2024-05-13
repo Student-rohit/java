@@ -1,0 +1,11 @@
+public class FinalKeyword {     
+    public static final int MAX_VALUE = 100;     
+    public final void displayMessage() {    
+        System.out.println("This is a final method.");    
+    }    
+    
+    public static void main(String[] args) {    
+        FinalKeyword obj = new FinalKeyword();        
+        obj.displayMessage();     
+    }    
+}   
