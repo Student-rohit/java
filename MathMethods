@@ -1,0 +1,16 @@
+public class   MathMethods {     
+    public static void main(String[] args) {         
+        double number = 25.0;         
+        double squareRoot = Math.sqrt(number); 
+        System.out.println("Square root of " + number + " is: " + squareRoot);
+        
+        double base = 3.0;         
+        double exponent = 4.0;         
+        double  powerResult = Math.pow(base, exponent);    
+        System.out.println(base + " raised to the power of " + exponent + " : " + powerResult);    
+        double negativeNumber = -10.5;        
+        double absValue= Math.abs(negativeNumber);    
+        System.out.println("Absolute value of " + negativeNumber + " is: " + absValue);     
+        
+    }    
+}    
