@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class PetersonNumber {
+    // Array to store precomputed factorials of digits 0-9
+    static long[] factorial = new long[] { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880 };
+
+    public static void main(String[] args) {
+        // Scanner for user input
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number to check: ");
+        int n = sc.nextInt(); // Read user input
+        sc.close(); // Close the scanner to avoid resource leaks
+
+        // Check if the number is a Peterson number
+        if (isPeterson(n)) {
+            System.out.println("The given number is a Peterson number.");
+        } else {
+            System.out.println("The given number is not a Peterson number.");
+        }
+    }
+
+    // Function to check if a number is a Peterson number
+    static boolean isPeterson(int n) {
+        int num = n;
+        int sum = 0;
+
+        // Calculate the sum of factorials of the digits
+        while (n > 0) {
+            int digit = n % 10; // Extract the last digit
+            sum += factorial[digit]; // Add the factorial of the digit to the sum
+            n /= 10; // Remove the last digit
+        }
+
+        // Return true if the sum equals the original number
+        return sum == num;
+    }
+}
